@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44671BE4E28BF863B3257FAA /* Pods_HotWaterShutdownScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179254B90DECC95F619CB711 /* Pods_HotWaterShutdownScheduler.framework */; };
+		A56B8980250822DA0018DD34 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B897F250822D90018DD34 /* Address.swift */; };
+		A56B89822508252D0018DD34 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B89812508252D0018DD34 /* FileService.swift */; };
+		A56B89842508267C0018DD34 /* HWSSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B89832508267C0018DD34 /* HWSSError.swift */; };
 		A5E3EFE92508145D00C792E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFE82508145D00C792E3 /* AppDelegate.swift */; };
-		A5E3EFEB2508145D00C792E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFEA2508145D00C792E3 /* SceneDelegate.swift */; };
 		A5E3EFED2508145D00C792E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFEC2508145D00C792E3 /* ViewController.swift */; };
 		A5E3EFF02508145D00C792E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3EFEE2508145D00C792E3 /* Main.storyboard */; };
 		A5E3EFF32508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFF12508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld */; };
@@ -20,9 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		179254B90DECC95F619CB711 /* Pods_HotWaterShutdownScheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotWaterShutdownScheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		271BF817CD838BB65AB131FB /* Pods-HotWaterShutdownScheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotWaterShutdownScheduler.release.xcconfig"; path = "Target Support Files/Pods-HotWaterShutdownScheduler/Pods-HotWaterShutdownScheduler.release.xcconfig"; sourceTree = "<group>"; };
+		A56B897F250822D90018DD34 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		A56B89812508252D0018DD34 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+		A56B89832508267C0018DD34 /* HWSSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWSSError.swift; sourceTree = "<group>"; };
 		A5E3EFE52508145D00C792E3 /* HotWaterShutdownScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotWaterShutdownScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E3EFE82508145D00C792E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5E3EFEA2508145D00C792E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A5E3EFEC2508145D00C792E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5E3EFEF2508145D00C792E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5E3EFF22508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotWaterShutdownScheduler.xcdatamodel; sourceTree = "<group>"; };
@@ -32,6 +39,7 @@
 		A5E3F000250814BC00C792E3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A5E3F0042508170100C792E3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		A5E3F0072508199600C792E3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D0477C9A55E3D17E342518A9 /* Pods-HotWaterShutdownScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotWaterShutdownScheduler.debug.xcconfig"; path = "Target Support Files/Pods-HotWaterShutdownScheduler/Pods-HotWaterShutdownScheduler.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44671BE4E28BF863B3257FAA /* Pods_HotWaterShutdownScheduler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001AB3597A035B453FFA7990 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0477C9A55E3D17E342518A9 /* Pods-HotWaterShutdownScheduler.debug.xcconfig */,
+				271BF817CD838BB65AB131FB /* Pods-HotWaterShutdownScheduler.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A5E3EFDC2508145D00C792E3 = {
 			isa = PBXGroup;
 			children = (
 				A5E3EFE72508145D00C792E3 /* HotWaterShutdownScheduler */,
 				A5E3EFE62508145D00C792E3 /* Products */,
+				001AB3597A035B453FFA7990 /* Pods */,
+				E5A076B8D0A6858A60659934 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,7 +87,6 @@
 				A5E3F0062508197E00C792E3 /* Models */,
 				A5E3EFFF250814A500C792E3 /* Services */,
 				A5E3EFE82508145D00C792E3 /* AppDelegate.swift */,
-				A5E3EFEA2508145D00C792E3 /* SceneDelegate.swift */,
 				A5E3EFEC2508145D00C792E3 /* ViewController.swift */,
 				A5E3EFEE2508145D00C792E3 /* Main.storyboard */,
 				A5E3EFF42508146300C792E3 /* Assets.xcassets */,
@@ -82,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				A5E3F000250814BC00C792E3 /* NetworkService.swift */,
+				A56B89812508252D0018DD34 /* FileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -90,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A5E3F0042508170100C792E3 /* Response.swift */,
+				A56B897F250822D90018DD34 /* Address.swift */,
 			);
 			path = REST;
 			sourceTree = "<group>";
@@ -99,6 +120,7 @@
 			children = (
 				A5E3F002250816CE00C792E3 /* REST */,
 				A5E3F009250819C000C792E3 /* CoreData */,
+				A56B89832508267C0018DD34 /* HWSSError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -111,6 +133,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		E5A076B8D0A6858A60659934 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				179254B90DECC95F619CB711 /* Pods_HotWaterShutdownScheduler.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5E3EFFC2508146300C792E3 /* Build configuration list for PBXNativeTarget "HotWaterShutdownScheduler" */;
 			buildPhases = (
+				F30852FC2FE43BDAAE6C70B8 /* [CP] Check Pods Manifest.lock */,
 				A5E3EFE12508145D00C792E3 /* Sources */,
 				A5E3EFE22508145D00C792E3 /* Frameworks */,
 				A5E3EFE32508145D00C792E3 /* Resources */,
+				73CB224C0703D5D8AB10F993 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,18 +209,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		73CB224C0703D5D8AB10F993 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotWaterShutdownScheduler/Pods-HotWaterShutdownScheduler-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HotWaterShutdownScheduler/Pods-HotWaterShutdownScheduler-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HotWaterShutdownScheduler/Pods-HotWaterShutdownScheduler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F30852FC2FE43BDAAE6C70B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HotWaterShutdownScheduler-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5E3EFE12508145D00C792E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A5E3F0082508199600C792E3 /* CoreDataStack.swift in Sources */,
+				A56B89842508267C0018DD34 /* HWSSError.swift in Sources */,
 				A5E3F001250814BC00C792E3 /* NetworkService.swift in Sources */,
 				A5E3EFED2508145D00C792E3 /* ViewController.swift in Sources */,
 				A5E3EFE92508145D00C792E3 /* AppDelegate.swift in Sources */,
-				A5E3EFEB2508145D00C792E3 /* SceneDelegate.swift in Sources */,
 				A5E3F0052508170100C792E3 /* Response.swift in Sources */,
+				A56B89822508252D0018DD34 /* FileService.swift in Sources */,
 				A5E3EFF32508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld in Sources */,
+				A56B8980250822DA0018DD34 /* Address.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,11 +406,13 @@
 		};
 		A5E3EFFD2508146300C792E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0477C9A55E3D17E342518A9 /* Pods-HotWaterShutdownScheduler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LPTWC9LMSM;
 				INFOPLIST_FILE = HotWaterShutdownScheduler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,11 +426,13 @@
 		};
 		A5E3EFFE2508146300C792E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 271BF817CD838BB65AB131FB /* Pods-HotWaterShutdownScheduler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LPTWC9LMSM;
 				INFOPLIST_FILE = HotWaterShutdownScheduler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

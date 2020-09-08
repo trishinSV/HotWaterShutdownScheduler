@@ -41,8 +41,6 @@ class CoreDataStack: NSObject {
     }
 }
 
-
-
 extension CoreDataStack {
 
     func applicationDocumentsDirectory() {
