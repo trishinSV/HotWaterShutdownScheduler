@@ -14,6 +14,9 @@
 		A5E3EFF32508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFF12508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld */; };
 		A5E3EFF52508146300C792E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E3EFF42508146300C792E3 /* Assets.xcassets */; };
 		A5E3EFF82508146300C792E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3EFF62508146300C792E3 /* LaunchScreen.storyboard */; };
+		A5E3F001250814BC00C792E3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3F000250814BC00C792E3 /* NetworkService.swift */; };
+		A5E3F0052508170100C792E3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3F0042508170100C792E3 /* Response.swift */; };
+		A5E3F0082508199600C792E3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3F0072508199600C792E3 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		A5E3EFF42508146300C792E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5E3EFF72508146300C792E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5E3EFF92508146300C792E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5E3F000250814BC00C792E3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A5E3F0042508170100C792E3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		A5E3F0072508199600C792E3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 		A5E3EFE72508145D00C792E3 /* HotWaterShutdownScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				A5E3F0062508197E00C792E3 /* Models */,
+				A5E3EFFF250814A500C792E3 /* Services */,
 				A5E3EFE82508145D00C792E3 /* AppDelegate.swift */,
 				A5E3EFEA2508145D00C792E3 /* SceneDelegate.swift */,
 				A5E3EFEC2508145D00C792E3 /* ViewController.swift */,
@@ -68,6 +76,39 @@
 				A5E3EFF12508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld */,
 			);
 			path = HotWaterShutdownScheduler;
+			sourceTree = "<group>";
+		};
+		A5E3EFFF250814A500C792E3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3F000250814BC00C792E3 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A5E3F002250816CE00C792E3 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3F0042508170100C792E3 /* Response.swift */,
+			);
+			path = REST;
+			sourceTree = "<group>";
+		};
+		A5E3F0062508197E00C792E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3F002250816CE00C792E3 /* REST */,
+				A5E3F009250819C000C792E3 /* CoreData */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A5E3F009250819C000C792E3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3F0072508199600C792E3 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E3F0082508199600C792E3 /* CoreDataStack.swift in Sources */,
+				A5E3F001250814BC00C792E3 /* NetworkService.swift in Sources */,
 				A5E3EFED2508145D00C792E3 /* ViewController.swift in Sources */,
 				A5E3EFE92508145D00C792E3 /* AppDelegate.swift in Sources */,
 				A5E3EFEB2508145D00C792E3 /* SceneDelegate.swift in Sources */,
+				A5E3F0052508170100C792E3 /* Response.swift in Sources */,
 				A5E3EFF32508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
