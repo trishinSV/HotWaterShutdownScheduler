@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		44671BE4E28BF863B3257FAA /* Pods_HotWaterShutdownScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179254B90DECC95F619CB711 /* Pods_HotWaterShutdownScheduler.framework */; };
+		A525D3AA250914FD0008A24D /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525D3A9250914FD0008A24D /* DatabaseService.swift */; };
 		A56B8980250822DA0018DD34 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B897F250822D90018DD34 /* Address.swift */; };
 		A56B89822508252D0018DD34 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B89812508252D0018DD34 /* FileService.swift */; };
 		A56B89842508267C0018DD34 /* HWSSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B89832508267C0018DD34 /* HWSSError.swift */; };
+		A56B89862508B9AF0018DD34 /* DBAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B89852508B9AF0018DD34 /* DBAddress.swift */; };
 		A5E3EFE92508145D00C792E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFE82508145D00C792E3 /* AppDelegate.swift */; };
 		A5E3EFED2508145D00C792E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFEC2508145D00C792E3 /* ViewController.swift */; };
 		A5E3EFF02508145D00C792E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3EFEE2508145D00C792E3 /* Main.storyboard */; };
@@ -25,9 +27,11 @@
 /* Begin PBXFileReference section */
 		179254B90DECC95F619CB711 /* Pods_HotWaterShutdownScheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotWaterShutdownScheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		271BF817CD838BB65AB131FB /* Pods-HotWaterShutdownScheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotWaterShutdownScheduler.release.xcconfig"; path = "Target Support Files/Pods-HotWaterShutdownScheduler/Pods-HotWaterShutdownScheduler.release.xcconfig"; sourceTree = "<group>"; };
+		A525D3A9250914FD0008A24D /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		A56B897F250822D90018DD34 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A56B89812508252D0018DD34 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		A56B89832508267C0018DD34 /* HWSSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWSSError.swift; sourceTree = "<group>"; };
+		A56B89852508B9AF0018DD34 /* DBAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAddress.swift; sourceTree = "<group>"; };
 		A5E3EFE52508145D00C792E3 /* HotWaterShutdownScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotWaterShutdownScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E3EFE82508145D00C792E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5E3EFEC2508145D00C792E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			children = (
 				A5E3F000250814BC00C792E3 /* NetworkService.swift */,
 				A56B89812508252D0018DD34 /* FileService.swift */,
+				A525D3A9250914FD0008A24D /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				A5E3F0072508199600C792E3 /* CoreDataStack.swift */,
+				A56B89852508B9AF0018DD34 /* DBAddress.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -260,11 +266,13 @@
 				A56B89842508267C0018DD34 /* HWSSError.swift in Sources */,
 				A5E3F001250814BC00C792E3 /* NetworkService.swift in Sources */,
 				A5E3EFED2508145D00C792E3 /* ViewController.swift in Sources */,
+				A56B89862508B9AF0018DD34 /* DBAddress.swift in Sources */,
 				A5E3EFE92508145D00C792E3 /* AppDelegate.swift in Sources */,
 				A5E3F0052508170100C792E3 /* Response.swift in Sources */,
 				A56B89822508252D0018DD34 /* FileService.swift in Sources */,
 				A5E3EFF32508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld in Sources */,
 				A56B8980250822DA0018DD34 /* Address.swift in Sources */,
+				A525D3AA250914FD0008A24D /* DatabaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

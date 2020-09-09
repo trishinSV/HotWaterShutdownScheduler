@@ -8,19 +8,23 @@
 
 import Foundation
 
-protocol NetworkServiceProtocol {
+protocol NetworkServiceProtocol: AnyObject {
     func getDataWith(completion: @escaping (Result<String, HWSSError>) -> Void)
 }
 
-class NetworkService: NetworkServiceProtocol {
+final class NetworkService: NetworkServiceProtocol {
 
-    static let shared: NetworkServiceProtocol = NetworkService()
+    //MARK: - Private
 
     private init() {}
 
     private lazy var endpoint: String = {
         "https://api.gu.spb.ru/UniversalMobileService/classifiers/downloadClassifiers?classifiersId=4"
     }()
+
+    //MARK: - Public
+
+    static let shared: NetworkServiceProtocol = NetworkService()
 
     func getDataWith(completion: @escaping (Result<String, HWSSError>) -> Void) {
         guard let url = URL(string: endpoint) else {

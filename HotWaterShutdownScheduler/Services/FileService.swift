@@ -9,15 +9,19 @@
 import Foundation
 import Zip
 
-protocol FileServiceProtocol {
+protocol FileServiceProtocol: AnyObject {
     func decode(file: String, completeion: (Result<AddressList, HWSSError>) -> Void)
 }
 
-class FileService: FileServiceProtocol {
+final class FileService: FileServiceProtocol {
 
-    static let shared: FileServiceProtocol = FileService()
+    //MARK: - Private
 
     private init() {}
+
+    //MARK: - Public
+
+    static let shared: FileServiceProtocol = FileService()
 
     func decode(file: String, completeion: (Result<AddressList, HWSSError>) -> Void) {
         guard let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("file.zip"),
