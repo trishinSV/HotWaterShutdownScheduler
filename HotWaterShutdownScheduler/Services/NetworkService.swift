@@ -14,7 +14,7 @@ protocol NetworkServiceProtocol: AnyObject {
 
 final class NetworkService: NetworkServiceProtocol {
 
-    //MARK: - Private
+    // MARK: - Private
 
     private init() {}
 
@@ -22,7 +22,7 @@ final class NetworkService: NetworkServiceProtocol {
         "https://api.gu.spb.ru/UniversalMobileService/classifiers/downloadClassifiers?classifiersId=4"
     }()
 
-    //MARK: - Public
+    // MARK: - Public
 
     static let shared: NetworkServiceProtocol = NetworkService()
 

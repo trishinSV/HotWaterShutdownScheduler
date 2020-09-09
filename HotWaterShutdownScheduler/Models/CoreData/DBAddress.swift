@@ -11,7 +11,7 @@ import CoreData
 class DBAddress: NSManagedObject {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<DBAddress> {
-        return NSFetchRequest<DBAddress>(entityName: "DBAddress");
+        return NSFetchRequest<DBAddress>(entityName: "DBAddress")
     }
 
     @NSManaged public var city: String?

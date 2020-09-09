@@ -15,11 +15,11 @@ protocol FileServiceProtocol: AnyObject {
 
 final class FileService: FileServiceProtocol {
 
-    //MARK: - Private
+    // MARK: - Private
 
     private init() {}
 
-    //MARK: - Public
+    // MARK: - Public
 
     static let shared: FileServiceProtocol = FileService()
 

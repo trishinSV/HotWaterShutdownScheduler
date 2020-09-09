@@ -44,7 +44,7 @@ final class DatabaseService: DatabaseServiceProtocol {
         return nil
     }
 
-    //MARK: - Public
+    // MARK: - Public
 
     static let shared: DatabaseServiceProtocol = DatabaseService()
 
@@ -94,7 +94,7 @@ final class DatabaseService: DatabaseServiceProtocol {
     func save(array: AddressList) {
         print("Start")
         let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
-        _ = array.map{ self.map(address: $0, context: context) }
+        _ = array.map { self.map(address: $0, context: context) }
         print("Finish")
         do {
             try CoreDataStack.sharedInstance.persistentContainer.viewContext.save()
@@ -109,7 +109,7 @@ final class DatabaseService: DatabaseServiceProtocol {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Address.self))
             do {
                 let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
-                _ = objects.map{$0.map{context.delete($0)}}
+                _ = objects.map {$0.map {context.delete($0)}}
                 CoreDataStack.sharedInstance.saveContext()
             } catch let error {
                 print("ERROR DELETING : \(error)")

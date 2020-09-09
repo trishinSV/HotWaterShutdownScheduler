@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		44671BE4E28BF863B3257FAA /* Pods_HotWaterShutdownScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179254B90DECC95F619CB711 /* Pods_HotWaterShutdownScheduler.framework */; };
 		A525D3AA250914FD0008A24D /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525D3A9250914FD0008A24D /* DatabaseService.swift */; };
+		A525D3AD25096C7E0008A24D /* AddressListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525D3AC25096C7E0008A24D /* AddressListPresenter.swift */; };
+		A525D3B125096E5E0008A24D /* AddressListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525D3AF25096E5E0008A24D /* AddressListTableViewCell.swift */; };
+		A525D3B225096E5E0008A24D /* AddressListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A525D3B025096E5E0008A24D /* AddressListTableViewCell.xib */; };
+		A525D3B7250976170008A24D /* AddressListCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525D3B6250976170008A24D /* AddressListCellPresenter.swift */; };
 		A56B8980250822DA0018DD34 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B897F250822D90018DD34 /* Address.swift */; };
 		A56B89822508252D0018DD34 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B89812508252D0018DD34 /* FileService.swift */; };
 		A56B89842508267C0018DD34 /* HWSSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B89832508267C0018DD34 /* HWSSError.swift */; };
 		A56B89862508B9AF0018DD34 /* DBAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B89852508B9AF0018DD34 /* DBAddress.swift */; };
 		A5E3EFE92508145D00C792E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFE82508145D00C792E3 /* AppDelegate.swift */; };
-		A5E3EFED2508145D00C792E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFEC2508145D00C792E3 /* ViewController.swift */; };
+		A5E3EFED2508145D00C792E3 /* AddressListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFEC2508145D00C792E3 /* AddressListViewController.swift */; };
 		A5E3EFF02508145D00C792E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3EFEE2508145D00C792E3 /* Main.storyboard */; };
 		A5E3EFF32508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFF12508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld */; };
 		A5E3EFF52508146300C792E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E3EFF42508146300C792E3 /* Assets.xcassets */; };
@@ -28,13 +32,17 @@
 		179254B90DECC95F619CB711 /* Pods_HotWaterShutdownScheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotWaterShutdownScheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		271BF817CD838BB65AB131FB /* Pods-HotWaterShutdownScheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotWaterShutdownScheduler.release.xcconfig"; path = "Target Support Files/Pods-HotWaterShutdownScheduler/Pods-HotWaterShutdownScheduler.release.xcconfig"; sourceTree = "<group>"; };
 		A525D3A9250914FD0008A24D /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		A525D3AC25096C7E0008A24D /* AddressListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListPresenter.swift; sourceTree = "<group>"; };
+		A525D3AF25096E5E0008A24D /* AddressListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListTableViewCell.swift; sourceTree = "<group>"; };
+		A525D3B025096E5E0008A24D /* AddressListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressListTableViewCell.xib; sourceTree = "<group>"; };
+		A525D3B6250976170008A24D /* AddressListCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListCellPresenter.swift; sourceTree = "<group>"; };
 		A56B897F250822D90018DD34 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A56B89812508252D0018DD34 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		A56B89832508267C0018DD34 /* HWSSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWSSError.swift; sourceTree = "<group>"; };
 		A56B89852508B9AF0018DD34 /* DBAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAddress.swift; sourceTree = "<group>"; };
 		A5E3EFE52508145D00C792E3 /* HotWaterShutdownScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotWaterShutdownScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E3EFE82508145D00C792E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5E3EFEC2508145D00C792E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5E3EFEC2508145D00C792E3 /* AddressListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListViewController.swift; sourceTree = "<group>"; };
 		A5E3EFEF2508145D00C792E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5E3EFF22508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotWaterShutdownScheduler.xcdatamodel; sourceTree = "<group>"; };
 		A5E3EFF42508146300C792E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +75,43 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A525D3AB25096C470008A24D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A525D3B325096F5C0008A24D /* Presenters */,
+				A525D3AE25096E320008A24D /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A525D3AE25096E320008A24D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A525D3B825098B320008A24D /* Cells */,
+				A5E3EFEC2508145D00C792E3 /* AddressListViewController.swift */,
+				A5E3EFEE2508145D00C792E3 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A525D3B325096F5C0008A24D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				A525D3AC25096C7E0008A24D /* AddressListPresenter.swift */,
+				A525D3B6250976170008A24D /* AddressListCellPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		A525D3B825098B320008A24D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A525D3AF25096E5E0008A24D /* AddressListTableViewCell.swift */,
+				A525D3B025096E5E0008A24D /* AddressListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A5E3EFDC2508145D00C792E3 = {
 			isa = PBXGroup;
 			children = (
@@ -90,9 +135,8 @@
 			children = (
 				A5E3F0062508197E00C792E3 /* Models */,
 				A5E3EFFF250814A500C792E3 /* Services */,
+				A525D3AB25096C470008A24D /* Presentation */,
 				A5E3EFE82508145D00C792E3 /* AppDelegate.swift */,
-				A5E3EFEC2508145D00C792E3 /* ViewController.swift */,
-				A5E3EFEE2508145D00C792E3 /* Main.storyboard */,
 				A5E3EFF42508146300C792E3 /* Assets.xcassets */,
 				A5E3EFF62508146300C792E3 /* LaunchScreen.storyboard */,
 				A5E3EFF92508146300C792E3 /* Info.plist */,
@@ -209,6 +253,7 @@
 			files = (
 				A5E3EFF82508146300C792E3 /* LaunchScreen.storyboard in Resources */,
 				A5E3EFF52508146300C792E3 /* Assets.xcassets in Resources */,
+				A525D3B225096E5E0008A24D /* AddressListTableViewCell.xib in Resources */,
 				A5E3EFF02508145D00C792E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,14 +310,17 @@
 				A5E3F0082508199600C792E3 /* CoreDataStack.swift in Sources */,
 				A56B89842508267C0018DD34 /* HWSSError.swift in Sources */,
 				A5E3F001250814BC00C792E3 /* NetworkService.swift in Sources */,
-				A5E3EFED2508145D00C792E3 /* ViewController.swift in Sources */,
+				A5E3EFED2508145D00C792E3 /* AddressListViewController.swift in Sources */,
+				A525D3B7250976170008A24D /* AddressListCellPresenter.swift in Sources */,
 				A56B89862508B9AF0018DD34 /* DBAddress.swift in Sources */,
 				A5E3EFE92508145D00C792E3 /* AppDelegate.swift in Sources */,
 				A5E3F0052508170100C792E3 /* Response.swift in Sources */,
 				A56B89822508252D0018DD34 /* FileService.swift in Sources */,
+				A525D3B125096E5E0008A24D /* AddressListTableViewCell.swift in Sources */,
 				A5E3EFF32508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld in Sources */,
 				A56B8980250822DA0018DD34 /* Address.swift in Sources */,
 				A525D3AA250914FD0008A24D /* DatabaseService.swift in Sources */,
+				A525D3AD25096C7E0008A24D /* AddressListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
