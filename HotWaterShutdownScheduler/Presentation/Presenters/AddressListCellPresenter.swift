@@ -28,12 +28,12 @@ class AddressListCellPresenter: AddressListCellPresenterProtocol {
     var periodTitle: String
 
     init(address: Address) {
-        cityTitle = address.city
-        streetTitle = address.houseAddress
+        cityTitle = address.city.trimmingCharacters(in: .whitespaces).count == 0 ? "" : address.city
+        streetTitle = address.houseAddress.trimmingCharacters(in: .whitespaces).count == 0 ? "" : address.houseAddress
 
-        let house = address.houseNumber.count == 0 ? "" : "дом " + address.houseNumber
-        let housing = address.housing.count == 0 ? "" : " корпус " + address.housing
-        let liter = address.liter.count == 0 ? "" : " литера " + address.liter
+        let house = address.houseNumber.trimmingCharacters(in: .whitespaces).count == 0 ? "" : "дом " + address.houseNumber
+        let housing = address.housing.trimmingCharacters(in: .whitespaces).count == 0 ? "" : " корпус " + address.housing
+        let liter = address.liter.trimmingCharacters(in: .whitespaces).count == 0 ? "" : " литера " + address.liter
 
         houseTitle = house + housing + liter
 

@@ -17,41 +17,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="313" height="104"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Q8b-yC-008">
-                        <rect key="frame" x="10" y="4" width="303" height="100"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Q8b-yC-008">
+                        <rect key="frame" x="10" y="4" width="303" height="96"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Санкт-Петербург" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYT-49-EXQ">
-                                <rect key="frame" x="0.0" y="0.0" width="303" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="wS4-fU-Ehb"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Краснопутиловская" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqd-55-IMP">
-                                <rect key="frame" x="0.0" y="26" width="303" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="JcN-IB-NBi"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="25" width="159.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="дом 15 корпус 1 литер А" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfl-xs-x6g">
-                                <rect key="frame" x="0.0" y="52" width="303" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="79G-Pz-6YW"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="50" width="194" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 мая 2019 - 2 июля 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cj-CE-98z">
-                                <rect key="frame" x="0.0" y="78" width="303" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Na5-H7-TOp"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="75" width="212" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -61,8 +49,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Q8b-yC-008" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="2LQ-qq-UHv"/>
+                    <constraint firstItem="Q8b-yC-008" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="YJK-fD-rrU"/>
                     <constraint firstAttribute="trailing" secondItem="Q8b-yC-008" secondAttribute="trailing" id="bHW-LK-BQq"/>
-                    <constraint firstAttribute="bottom" secondItem="Q8b-yC-008" secondAttribute="bottom" id="oTK-7S-NOZ"/>
+                    <constraint firstAttribute="bottom" secondItem="Q8b-yC-008" secondAttribute="bottom" constant="4" id="oTK-7S-NOZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

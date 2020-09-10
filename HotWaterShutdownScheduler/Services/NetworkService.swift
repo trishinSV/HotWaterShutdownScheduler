@@ -31,19 +31,24 @@ final class NetworkService: NetworkServiceProtocol {
             return completion(.failure(.badURL)) }
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else {
-                return completion(.failure(.networkError(error?.localizedDescription ?? "")))
+            if let error = error {
+                print(error.localizedDescription)
+                return completion(.failure(.networkError))
+            }
+            guard let data = data else {
+                return completion(.failure(.networkError))
             }
             do {
                 let response = try JSONDecoder().decode(Response.self, from: data)
                 guard let file = response.responseData.classifiers.first?.file else {
-                    return completion(.failure(.networkError(error?.localizedDescription ?? "")))
+                    return completion(.failure(.networkError))
                 }
                 DispatchQueue.main.async {
                     completion(.success(file))
                 }
             } catch let error {
-                return completion(.failure(.networkError(error.localizedDescription)))
+                print(error.localizedDescription)
+                return completion(.failure(.networkError))
             }
         }.resume()
     }

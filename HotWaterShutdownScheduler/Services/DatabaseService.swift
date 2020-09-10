@@ -21,6 +21,8 @@ final class DatabaseService: DatabaseServiceProtocol {
 
     private init() {}
 
+    private var isLoading: Bool = false
+
     private func map(dbAddress: DBAddress) -> Address {
         Address(city: dbAddress.city ?? "",
                 houseAddress: dbAddress.houseAddress ?? "",
@@ -31,7 +33,7 @@ final class DatabaseService: DatabaseServiceProtocol {
     }
 
     private func map(address: Address, context: NSManagedObjectContext) -> NSManagedObject? {
-        if let ent = self.fetch(address: address) { return ent }
+//        if let ent = self.fetch(address: address) { return ent }
         if let dbAddress = NSEntityDescription.insertNewObject(forEntityName: "DBAddress", into: context) as? DBAddress {
             dbAddress.city = address.city
             dbAddress.houseAddress = address.houseAddress
@@ -55,12 +57,12 @@ final class DatabaseService: DatabaseServiceProtocol {
                                         address.houseNumber,
                                         address.housing,
                                         address.liter)
-        request.sortDescriptors = [NSSortDescriptor(key: "houseAddress", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "city", ascending: true)]
+
         let frc = NSFetchedResultsController(fetchRequest: request,
                                              managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext,
                                              sectionNameKeyPath: nil,
                                              cacheName: nil)
-//        frc.delegate = self
         do {
             try frc.performFetch()
             if let result = frc.fetchedObjects?.first as? DBAddress {
@@ -74,12 +76,11 @@ final class DatabaseService: DatabaseServiceProtocol {
 
     func fetchAll() -> AddressList {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: DBAddress.self))
-        request.sortDescriptors = [NSSortDescriptor(key: "houseAddress", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "city", ascending: true)]
         let frc = NSFetchedResultsController(fetchRequest: request,
                                              managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext,
                                              sectionNameKeyPath: nil,
                                              cacheName: nil)
-//        frc.delegate = self
         do {
             try frc.performFetch()
             if let result = frc.fetchedObjects as? [DBAddress] {
@@ -92,27 +93,29 @@ final class DatabaseService: DatabaseServiceProtocol {
     }
 
     func save(array: AddressList) {
-        print("Start")
-        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+        guard !isLoading else { return }
+        self.isLoading.toggle()
+        self.deleteAll()
+        let context = CoreDataStack.sharedInstance.updateContext
         _ = array.map { self.map(address: $0, context: context) }
-        print("Finish")
         do {
-            try CoreDataStack.sharedInstance.persistentContainer.viewContext.save()
+            try context.save()
         } catch let error {
             print(error)
         }
+        self.isLoading.toggle()
     }
 
     func deleteAll() {
         do {
-            let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Address.self))
+            let context = CoreDataStack.sharedInstance.updateContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: DBAddress.self))
             do {
                 let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
                 _ = objects.map {$0.map {context.delete($0)}}
-                CoreDataStack.sharedInstance.saveContext()
+//                CoreDataStack.sharedInstance.updateContext
             } catch let error {
-                print("ERROR DELETING : \(error)")
+                print(error)
             }
         }
     }

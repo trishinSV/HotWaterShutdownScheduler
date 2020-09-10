@@ -39,13 +39,15 @@ class CoreDataStack: NSObject {
             }
         }
     }
-}
 
-extension CoreDataStack {
+    lazy var viewContext: NSManagedObjectContext = {
+        return self.persistentContainer.viewContext
+    }()
+    
+    lazy var updateContext: NSManagedObjectContext = {
+        let _updateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        _updateContext.parent = self.viewContext
+        return _updateContext
+    }()
 
-    func applicationDocumentsDirectory() {
-        if let url = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
-            print(url.absoluteString)
-        }
-    }
 }

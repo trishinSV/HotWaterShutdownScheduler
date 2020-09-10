@@ -16,6 +16,7 @@ protocol AddressListPresenterProtocol: AnyObject {
     var numberOfRows: Int { get }
 
     func viewDidLoad()
+    func update()
     func addressListCellPresenter(at indexPath: IndexPath) -> AddressListCellPresenterProtocol?
 
 }
@@ -29,24 +30,28 @@ class AddressListPresenter: AddressListPresenterProtocol {
     private var addressList: AddressList = []
 
     func viewDidLoad() {
-        self.addressList = DatabaseService.shared.fetchAll()
+        self.addressList = DatabaseService.shared.fetchAll().sorted { $0.city < $1.city }
+        self.update()
+    }
 
+    func update() {
         NetworkService.shared.getDataWith { result in
             switch result {
                 case let .success(file):
                     FileService.shared.decode(file: file) { result in
                         switch result {
                             case let .success(list):
-                                self.addressList = list
+                                self.addressList = list.sorted { $0.city < $1.city }
                                 self.view.update()
                                 DispatchQueue.global(qos: .background).async {
                                     DatabaseService.shared.save(array: list)
-
-                                }
-                            case .failure: print("f")
+                            }
+                            case let .failure(error):
+                                self.view.show(error: error.localizedDescription)
                         }
                 }
-                case .failure: print("f")
+                case let .failure(error):
+                    self.view.show(error: error.localizedDescription)
             }
         }
     }
@@ -57,26 +62,3 @@ class AddressListPresenter: AddressListPresenterProtocol {
         return AddressListCellPresenter(address: address)
     }
 }
-
-//extension AddressListPresenter: NSFetchedResultsControllerDelegate {
-//
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//        //
-//        //        switch type {
-//        //            case .insert:
-//        //                self.tableView.insertRows(at: [newIndexPath!], with: .automatic)
-//        //            case .delete:
-//        //                self.tableView.deleteRows(at: [indexPath!], with: .automatic)
-//        //            default:
-//        //                break
-//        //        }
-//    }
-//
-//    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        //        self.tableView.endUpdates()
-//    }
-//
-//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        //        tableView.beginUpdates()
-//    }
-//}

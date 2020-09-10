@@ -41,6 +41,7 @@ class AddressListTableViewCell: UITableViewCell {
         houseLabel.text = presenter.houseTitle
         periodLabel.text = presenter.periodTitle
     }
+
 }
 
 extension AddressListTableViewCell: AddressListCellViewProtocol {}

@@ -10,7 +10,22 @@ import UIKit
 
 enum HWSSError: Error {
     case badURL
-    case networkError(String)
+    case networkError
     case decodingError
     case diskError
+}
+
+extension HWSSError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+            case .badURL:
+                return "Bad URL"
+            case .networkError:
+                return "Network error"
+            case .decodingError:
+                return "Decoding error"
+            case .diskError:
+                return "File writing error"
+        }
+    }
 }

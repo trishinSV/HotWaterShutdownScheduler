@@ -35,7 +35,6 @@ final class FileService: FileServiceProtocol {
             let jsonData = try Data(contentsOf: path, options: .mappedIfSafe)
             return completeion(.success(try JSONDecoder().decode(AddressList.self, from: jsonData)))
         } catch {
-            print(error.localizedDescription)
             return completeion(.failure(.decodingError))
         }
     }
