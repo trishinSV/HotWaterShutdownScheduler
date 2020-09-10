@@ -33,7 +33,7 @@ final class NetworkService: NetworkServiceProtocol {
         guard let url = URL(string: endpoint) else {
             return completion(.failure(.badURL)) }
 
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
                 return completion(.failure(.networkError))
@@ -49,7 +49,8 @@ final class NetworkService: NetworkServiceProtocol {
                 DispatchQueue.main.async {
                     completion(.success(file))
                 }
-            } catch let error {
+            } catch {
+                let error = error as Error
                 print(error.localizedDescription)
                 return completion(.failure(.networkError))
             }

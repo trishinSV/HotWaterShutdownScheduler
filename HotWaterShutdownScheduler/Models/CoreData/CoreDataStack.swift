@@ -6,8 +6,8 @@
 //  Copyright © 2020 Сергей Тришин. All rights reserved.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 protocol CoreDataStackProtocol: AnyObject {
 
@@ -36,11 +36,11 @@ class CoreDataStack: CoreDataStackProtocol {
 
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "HotWaterShutdownScheduler")
-        container.loadPersistentStores(completionHandler: { (_, error) in
+        container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        })
+        }
         return container
     }()
 
@@ -61,12 +61,12 @@ class CoreDataStack: CoreDataStackProtocol {
     // MARK: - Core Data Contexts
 
     lazy var viewContext: NSManagedObjectContext = {
-        return self.persistentContainer.viewContext
+        self.persistentContainer.viewContext
     }()
 
     lazy var updateContext: NSManagedObjectContext = {
-        let _updateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        _updateContext.parent = self.viewContext
-        return _updateContext
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.parent = self.viewContext
+        return context
     }()
 }

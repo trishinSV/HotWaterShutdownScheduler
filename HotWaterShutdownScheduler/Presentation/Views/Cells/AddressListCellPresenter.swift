@@ -6,7 +6,7 @@
 //  Copyright © 2020 Сергей Тришин. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol AddressListCellPresenterProtocol: AnyObject {
 
@@ -32,19 +32,19 @@ class AddressListCellPresenter: AddressListCellPresenterProtocol {
     var periodTitle: String
 
     init(address: Address) {
-        cityTitle = address.city.trimmingCharacters(in: .whitespaces).count == 0 ? "" : address.city
-        streetTitle = address.houseAddress.trimmingCharacters(in: .whitespaces).count == 0 ? "" : address.houseAddress
+        cityTitle = address.city.trimmingCharacters(in: .whitespaces).isEmpty ? "" : address.city
+        streetTitle = address.houseAddress.trimmingCharacters(in: .whitespaces).isEmpty ? "" : address.houseAddress
 
-        let house = address.houseNumber.trimmingCharacters(in: .whitespaces).count == 0 ? "" : "дом " + address.houseNumber
-        let housing = address.housing.trimmingCharacters(in: .whitespaces).count == 0 ? "" : " корпус " + address.housing
-        let liter = address.liter.trimmingCharacters(in: .whitespaces).count == 0 ? "" : " литера " + address.liter
+        let house = address.houseNumber.trimmingCharacters(in: .whitespaces).isEmpty ? "" : "дом " + address.houseNumber
+        let housing = address.housing.trimmingCharacters(in: .whitespaces).isEmpty ? "" : " корпус " + address.housing
+        let liter = address.liter.trimmingCharacters(in: .whitespaces).isEmpty ? "" : " литера " + address.liter
 
         houseTitle = house + housing + liter
 
         let dateList: [String] = address.period.split(separator: "-").map { String($0) }
         var formattedDateList: [String] = []
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.init(identifier: "ru_RU")
+        dateFormatter.locale = Locale(identifier: "ru_RU")
 
         dateList.forEach {
             dateFormatter.dateFormat = "dd.MM.yyyy"

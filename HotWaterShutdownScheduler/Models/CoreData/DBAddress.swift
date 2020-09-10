@@ -8,10 +8,10 @@
 
 import CoreData
 
-class DBAddress: NSManagedObject {
+public class DBAddress: NSManagedObject {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<DBAddress> {
-        return NSFetchRequest<DBAddress>(entityName: "DBAddress")
+        NSFetchRequest<DBAddress>(entityName: "DBAddress")
     }
 
     @NSManaged public var city: String?

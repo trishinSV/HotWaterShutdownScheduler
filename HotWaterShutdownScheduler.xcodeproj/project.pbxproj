@@ -253,6 +253,7 @@
 			buildPhases = (
 				F30852FC2FE43BDAAE6C70B8 /* [CP] Check Pods Manifest.lock */,
 				A5E3EFE12508145D00C792E3 /* Sources */,
+				A525D3DF250A413E0008A24D /* SwiftLint Script */,
 				A5E3EFE22508145D00C792E3 /* Frameworks */,
 				A5E3EFE32508145D00C792E3 /* Resources */,
 				73CB224C0703D5D8AB10F993 /* [CP] Embed Pods Frameworks */,
@@ -334,6 +335,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HotWaterShutdownScheduler/Pods-HotWaterShutdownScheduler-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A525D3DF250A413E0008A24D /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		F30852FC2FE43BDAAE6C70B8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

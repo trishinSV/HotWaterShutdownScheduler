@@ -6,8 +6,7 @@
 //  Copyright © 2020 Сергей Тришин. All rights reserved.
 //
 
-import UIKit
-import CoreData
+import Foundation
 
 protocol AddressListPresenterProtocol: AnyObject {
 
@@ -51,11 +50,11 @@ class AddressListPresenter: AddressListPresenterProtocol {
                                 self.view.update()
                                 DispatchQueue.global(qos: .background).async {
                                     DatabaseService.shared.save(array: list)
-                            }
+                                }
                             case let .failure(error):
                                 self.view.show(error: error.localizedDescription)
                         }
-                }
+                    }
                 case let .failure(error):
                     self.view.show(error: error.localizedDescription)
             }

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Сергей Тришин. All rights reserved.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 protocol DatabaseServiceProtocol: AnyObject {
 
@@ -86,7 +86,7 @@ final class DatabaseService: DatabaseServiceProtocol {
         do {
             try frc.performFetch()
             if let result = frc.fetchedObjects as? [DBAddress] {
-                return result.map { self.map(dbAddress: $0)}
+                return result.map { self.map(dbAddress: $0) }
             }
         } catch {
             print(error)
@@ -102,7 +102,8 @@ final class DatabaseService: DatabaseServiceProtocol {
         _ = array.map { self.map(address: $0, context: context) }
         do {
             try context.save()
-        } catch let error {
+        } catch {
+            let error = error as Error
             print(error)
         }
         self.isLoading.toggle()
@@ -114,8 +115,9 @@ final class DatabaseService: DatabaseServiceProtocol {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: DBAddress.self))
             do {
                 let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
-                _ = objects.map {$0.map {context.delete($0)}}
-            } catch let error {
+                _ = objects.map { $0.map { context.delete($0) } }
+            } catch {
+                let error = error as Error
                 print(error)
             }
         }
