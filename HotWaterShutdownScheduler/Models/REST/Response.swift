@@ -16,7 +16,7 @@ struct Response: Codable {
     let expectedResponseDate: String
 }
 
-// MARK: - Data
+// MARK: - ResponseData
 
 struct ResponseData: Codable {
     let classifiers: [Classifier]

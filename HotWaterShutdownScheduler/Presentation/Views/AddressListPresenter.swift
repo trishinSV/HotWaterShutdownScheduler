@@ -11,23 +11,29 @@ import CoreData
 
 protocol AddressListPresenterProtocol: AnyObject {
 
-    var view: AddressListViewProtocol! { get set }
+    // MARK: - Properties
 
+    var view: AddressListViewProtocol! { get set }
     var numberOfRows: Int { get }
+
+    // MARK: - Methods
 
     func viewDidLoad()
     func update()
     func addressListCellPresenter(at indexPath: IndexPath) -> AddressListCellPresenterProtocol?
-
 }
 
 class AddressListPresenter: AddressListPresenterProtocol {
 
+    // MARK: - Private
+
+    private var addressList: AddressList = []
+
+    // MARK: - Public
+
     var view: AddressListViewProtocol!
 
     var numberOfRows: Int { addressList.count }
-
-    private var addressList: AddressList = []
 
     func viewDidLoad() {
         self.addressList = DatabaseService.shared.fetchAll().sorted { $0.city < $1.city }

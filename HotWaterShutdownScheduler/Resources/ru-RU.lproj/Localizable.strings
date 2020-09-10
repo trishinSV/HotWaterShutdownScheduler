@@ -1,0 +1,21 @@
+/*
+ Localizable.strings
+ HotWaterShutdownScheduler
+
+ Created by Сергей Тришин on 10.09.2020.
+ Copyright © 2020 Сергей Тришин. All rights reserved.
+ */
+
+/// Common
+
+"Schedule" = "График отключения горячей воды";
+"Error" = "Ошибка";
+"OK" = "ОК";
+"Retry" = "Повторить";
+
+/// Errors
+
+"Network error" = "Не удалось подключиться к серверу.";
+"Bad URL" = "Неверный URL.";
+"Decoding error" = "Ошибка декодирования.";
+"File writing/reading error" = "Ошибка чтения/записи на диск.";

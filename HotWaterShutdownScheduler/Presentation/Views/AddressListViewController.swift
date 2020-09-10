@@ -17,52 +17,45 @@ protocol AddressListViewProtocol: AnyObject {
 
 class AddressListViewController: UIViewController {
 
+    // MARK: - Properties
+
     lazy var presenter: AddressListPresenterProtocol! = AddressListPresenter()
 
     @IBOutlet private var tableView: UITableView!
+
     private var activityIndicator: UIActivityIndicatorView!
     private var refreshControl: UIRefreshControl!
-//    private var alertController: UIAlertController!
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
         presenter.view = self
-        self.navigationItem.title = "График отключения горячей воды"
+        prepareView()
+    }
 
+    // MARK: - Methods
+
+    private func prepareView() {
+        self.navigationItem.title = "Schedule".localized
 
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         let barButton = UIBarButtonItem(customView: activityIndicator)
         self.navigationItem.setRightBarButton(barButton, animated: true)
         activityIndicator.startAnimating()
 
-
-
         self.refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         tableView.addSubview(refreshControl)
-//
-//        self.alertController = UIAlertController(title: "Alert", message: "This is an alert.", preferredStyle: .alert)
-//
-//        let action1 = UIAlertAction(title: "Default", style: .default) { (action:UIAlertAction) in
-//            print("You've pressed default");
-//        }
-//
-//        let action2 = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
-//            print("You've pressed cancel");
-//        }
-//
-//        alertController.addAction(action1)
-//        alertController.addAction(action2)
 
         tableView.register(UINib(nibName: String(describing: AddressListTableViewCell.self), bundle: nil),
-                                         forCellReuseIdentifier: String(describing: AddressListTableViewCell.self))
+                           forCellReuseIdentifier: String(describing: AddressListTableViewCell.self))
         tableView.delegate = self
         tableView.dataSource = self
     }
 
-    @objc func refresh() {
+    @objc private func refresh() {
         presenter.update()
     }
 }
@@ -97,20 +90,20 @@ extension AddressListViewController: UITableViewDelegate {
 }
 
 extension AddressListViewController: AddressListViewProtocol {
-    
+
     func show(error: String) {
-        let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-
-        let action1 = UIAlertAction(title: "Cancel", style: .cancel)
-
-        let action2 = UIAlertAction(title: "Retry", style: .default) { (action:UIAlertAction) in
-            self.activityIndicator.startAnimating()
-            self.presenter.update()
-        }
-
-        alertController.addAction(action1)
-        alertController.addAction(action2)
         DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Error".localized, message: error, preferredStyle: .alert)
+
+            let okAction = UIAlertAction(title: "OK".localized, style: .cancel)
+
+            let retryAction = UIAlertAction(title: "Retry".localized, style: .default) { (_: UIAlertAction) in
+                self.activityIndicator.startAnimating()
+                self.presenter.update()
+            }
+
+            alertController.addAction(okAction)
+            alertController.addAction(retryAction)
             self.present(alertController, animated: true, completion: nil)
             self.activityIndicator.stopAnimating()
             self.refreshControl.endRefreshing()

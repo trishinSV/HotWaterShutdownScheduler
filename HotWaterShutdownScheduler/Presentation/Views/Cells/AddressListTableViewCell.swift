@@ -10,29 +10,24 @@ import UIKit
 
 protocol AddressListCellViewProtocol: AnyObject {
 
+    // MARK: - Properties
+
     var presenter: AddressListCellPresenterProtocol! { get set }
 }
 
 class AddressListTableViewCell: UITableViewCell {
+
+    // MARK: - Private
 
     @IBOutlet private var cityLabel: UILabel!
     @IBOutlet private var streetLabel: UILabel!
     @IBOutlet private var houseLabel: UILabel!
     @IBOutlet private var periodLabel: UILabel!
 
+    // MARK: - Public
+
     var presenter: AddressListCellPresenterProtocol! {
         didSet { bindPresenter() }
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     func bindPresenter() {
@@ -41,7 +36,6 @@ class AddressListTableViewCell: UITableViewCell {
         houseLabel.text = presenter.houseTitle
         periodLabel.text = presenter.periodTitle
     }
-
 }
 
 extension AddressListTableViewCell: AddressListCellViewProtocol {}

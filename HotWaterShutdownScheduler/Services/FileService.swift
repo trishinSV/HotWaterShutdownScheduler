@@ -10,6 +10,9 @@ import Foundation
 import Zip
 
 protocol FileServiceProtocol: AnyObject {
+
+    // MARK: - Private
+
     func decode(file: String, completeion: (Result<AddressList, HWSSError>) -> Void)
 }
 

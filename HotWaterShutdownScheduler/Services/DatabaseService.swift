@@ -10,6 +10,9 @@ import Foundation
 import CoreData
 
 protocol DatabaseServiceProtocol: AnyObject {
+
+    // MARK: - Methods
+
     func fetch(address: Address) -> DBAddress?
     func fetchAll() -> AddressList
     func save(array: AddressList)
@@ -19,9 +22,9 @@ final class DatabaseService: DatabaseServiceProtocol {
 
     // MARK: - Private
 
-    private init() {}
-
     private var isLoading: Bool = false
+
+    private init() {}
 
     private func map(dbAddress: DBAddress) -> Address {
         Address(city: dbAddress.city ?? "",
@@ -33,7 +36,6 @@ final class DatabaseService: DatabaseServiceProtocol {
     }
 
     private func map(address: Address, context: NSManagedObjectContext) -> NSManagedObject? {
-//        if let ent = self.fetch(address: address) { return ent }
         if let dbAddress = NSEntityDescription.insertNewObject(forEntityName: "DBAddress", into: context) as? DBAddress {
             dbAddress.city = address.city
             dbAddress.houseAddress = address.houseAddress
@@ -60,7 +62,7 @@ final class DatabaseService: DatabaseServiceProtocol {
         request.sortDescriptors = [NSSortDescriptor(key: "city", ascending: true)]
 
         let frc = NSFetchedResultsController(fetchRequest: request,
-                                             managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext,
+                                             managedObjectContext: CoreDataStack.shared.persistentContainer.viewContext,
                                              sectionNameKeyPath: nil,
                                              cacheName: nil)
         do {
@@ -78,7 +80,7 @@ final class DatabaseService: DatabaseServiceProtocol {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: DBAddress.self))
         request.sortDescriptors = [NSSortDescriptor(key: "city", ascending: true)]
         let frc = NSFetchedResultsController(fetchRequest: request,
-                                             managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext,
+                                             managedObjectContext: CoreDataStack.shared.persistentContainer.viewContext,
                                              sectionNameKeyPath: nil,
                                              cacheName: nil)
         do {
@@ -96,7 +98,7 @@ final class DatabaseService: DatabaseServiceProtocol {
         guard !isLoading else { return }
         self.isLoading.toggle()
         self.deleteAll()
-        let context = CoreDataStack.sharedInstance.updateContext
+        let context = CoreDataStack.shared.updateContext
         _ = array.map { self.map(address: $0, context: context) }
         do {
             try context.save()
@@ -108,39 +110,14 @@ final class DatabaseService: DatabaseServiceProtocol {
 
     func deleteAll() {
         do {
-            let context = CoreDataStack.sharedInstance.updateContext
+            let context = CoreDataStack.shared.updateContext
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: DBAddress.self))
             do {
                 let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
                 _ = objects.map {$0.map {context.delete($0)}}
-//                CoreDataStack.sharedInstance.updateContext
             } catch let error {
                 print(error)
             }
         }
     }
-
 }
-
-//extension DatabaseService: NSFetchedResultsControllerDelegate {
-//
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//        //
-//        //        switch type {
-//        //            case .insert:
-//        //                self.tableView.insertRows(at: [newIndexPath!], with: .automatic)
-//        //            case .delete:
-//        //                self.tableView.deleteRows(at: [indexPath!], with: .automatic)
-//        //            default:
-//        //                break
-//        //        }
-//    }
-//
-//    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        //        self.tableView.endUpdates()
-//    }
-//
-//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        //        tableView.beginUpdates()
-//    }
-//}

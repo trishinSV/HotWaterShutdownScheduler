@@ -9,6 +9,9 @@
 import Foundation
 
 protocol NetworkServiceProtocol: AnyObject {
+
+    // MARK: - Methods
+
     func getDataWith(completion: @escaping (Result<String, HWSSError>) -> Void)
 }
 

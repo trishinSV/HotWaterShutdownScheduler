@@ -9,16 +9,34 @@
 import Foundation
 import CoreData
 
-class CoreDataStack: NSObject {
+protocol CoreDataStackProtocol: AnyObject {
 
-    static let sharedInstance = CoreDataStack()
-    private override init() {}
+    // MARK: - Properties
+
+    var persistentContainer: NSPersistentContainer { get }
+    var viewContext: NSManagedObjectContext { get }
+    var updateContext: NSManagedObjectContext { get }
+
+    // MARK: - Methods
+
+    func saveContext ()
+}
+
+class CoreDataStack: CoreDataStackProtocol {
+
+    // MARK: - Private
+
+    private init() {}
+
+    // MARK: - Public
+
+    static let shared: CoreDataStackProtocol = CoreDataStack()
 
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "HotWaterShutdownScheduler")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
@@ -40,14 +58,15 @@ class CoreDataStack: NSObject {
         }
     }
 
+    // MARK: - Core Data Contexts
+
     lazy var viewContext: NSManagedObjectContext = {
         return self.persistentContainer.viewContext
     }()
-    
+
     lazy var updateContext: NSManagedObjectContext = {
         let _updateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         _updateContext.parent = self.viewContext
         return _updateContext
     }()
-
 }

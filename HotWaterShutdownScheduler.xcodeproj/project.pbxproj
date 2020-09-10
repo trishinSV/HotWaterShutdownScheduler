@@ -13,6 +13,11 @@
 		A525D3B125096E5E0008A24D /* AddressListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525D3AF25096E5E0008A24D /* AddressListTableViewCell.swift */; };
 		A525D3B225096E5E0008A24D /* AddressListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A525D3B025096E5E0008A24D /* AddressListTableViewCell.xib */; };
 		A525D3B7250976170008A24D /* AddressListCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525D3B6250976170008A24D /* AddressListCellPresenter.swift */; };
+		A525D3CE250A34D90008A24D /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525D3CD250A34D90008A24D /* String+Additions.swift */; };
+		A525D3D5250A35E50008A24D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A525D3D0250A35E50008A24D /* Localizable.strings */; };
+		A525D3D6250A35E50008A24D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A525D3D3250A35E50008A24D /* LaunchScreen.storyboard */; };
+		A525D3DC250A35F10008A24D /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = A525D3D8250A35F10008A24D /* LaunchScreen.strings */; };
+		A525D3DD250A35F10008A24D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A525D3DA250A35F10008A24D /* Localizable.strings */; };
 		A56B8980250822DA0018DD34 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B897F250822D90018DD34 /* Address.swift */; };
 		A56B89822508252D0018DD34 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B89812508252D0018DD34 /* FileService.swift */; };
 		A56B89842508267C0018DD34 /* HWSSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B89832508267C0018DD34 /* HWSSError.swift */; };
@@ -22,7 +27,6 @@
 		A5E3EFF02508145D00C792E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3EFEE2508145D00C792E3 /* Main.storyboard */; };
 		A5E3EFF32508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5E3EFF12508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld */; };
 		A5E3EFF52508146300C792E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E3EFF42508146300C792E3 /* Assets.xcassets */; };
-		A5E3EFF82508146300C792E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3EFF62508146300C792E3 /* LaunchScreen.storyboard */; };
 		A5E3F001250814BC00C792E3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3F000250814BC00C792E3 /* NetworkService.swift */; };
 		A5E3F0052508170100C792E3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3F0042508170100C792E3 /* Response.swift */; };
 		A5E3F0082508199600C792E3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3F0072508199600C792E3 /* CoreDataStack.swift */; };
@@ -36,6 +40,12 @@
 		A525D3AF25096E5E0008A24D /* AddressListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListTableViewCell.swift; sourceTree = "<group>"; };
 		A525D3B025096E5E0008A24D /* AddressListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressListTableViewCell.xib; sourceTree = "<group>"; };
 		A525D3B6250976170008A24D /* AddressListCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListCellPresenter.swift; sourceTree = "<group>"; };
+		A525D3C0250A2DDD0008A24D /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/Main.strings"; sourceTree = "<group>"; };
+		A525D3CD250A34D90008A24D /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		A525D3D1250A35E50008A24D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		A525D3D4250A35E50008A24D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A525D3D9250A35F10008A24D /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = LaunchScreen.strings; sourceTree = "<group>"; };
+		A525D3DB250A35F10008A24D /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = Localizable.strings; sourceTree = "<group>"; };
 		A56B897F250822D90018DD34 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A56B89812508252D0018DD34 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		A56B89832508267C0018DD34 /* HWSSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWSSError.swift; sourceTree = "<group>"; };
@@ -46,7 +56,6 @@
 		A5E3EFEF2508145D00C792E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5E3EFF22508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotWaterShutdownScheduler.xcdatamodel; sourceTree = "<group>"; };
 		A5E3EFF42508146300C792E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A5E3EFF72508146300C792E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5E3EFF92508146300C792E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5E3F000250814BC00C792E3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A5E3F0042508170100C792E3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -78,7 +87,6 @@
 		A525D3AB25096C470008A24D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				A525D3B325096F5C0008A24D /* Presenters */,
 				A525D3AE25096E320008A24D /* Views */,
 			);
 			path = Presentation;
@@ -89,27 +97,71 @@
 			children = (
 				A525D3B825098B320008A24D /* Cells */,
 				A5E3EFEC2508145D00C792E3 /* AddressListViewController.swift */,
+				A525D3AC25096C7E0008A24D /* AddressListPresenter.swift */,
 				A5E3EFEE2508145D00C792E3 /* Main.storyboard */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		A525D3B325096F5C0008A24D /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-				A525D3AC25096C7E0008A24D /* AddressListPresenter.swift */,
-				A525D3B6250976170008A24D /* AddressListCellPresenter.swift */,
-			);
-			path = Presenters;
 			sourceTree = "<group>";
 		};
 		A525D3B825098B320008A24D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				A525D3AF25096E5E0008A24D /* AddressListTableViewCell.swift */,
+				A525D3B6250976170008A24D /* AddressListCellPresenter.swift */,
 				A525D3B025096E5E0008A24D /* AddressListTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A525D3CB250A34B80008A24D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A525D3CC250A34C20008A24D /* Foundation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A525D3CC250A34C20008A24D /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				A525D3CD250A34D90008A24D /* String+Additions.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		A525D3CF250A35E50008A24D /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A525D3D0250A35E50008A24D /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		A525D3D2250A35E50008A24D /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A525D3D3250A35E50008A24D /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		A525D3D7250A35F10008A24D /* ru-RU.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A525D3D8250A35F10008A24D /* LaunchScreen.strings */,
+				A525D3DA250A35F10008A24D /* Localizable.strings */,
+			);
+			path = "ru-RU.lproj";
+			sourceTree = "<group>";
+		};
+		A525D3DE250A36130008A24D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A525D3D2250A35E50008A24D /* Base.lproj */,
+				A525D3CF250A35E50008A24D /* en.lproj */,
+				A525D3D7250A35F10008A24D /* ru-RU.lproj */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A5E3EFDC2508145D00C792E3 = {
@@ -136,11 +188,11 @@
 				A5E3F0062508197E00C792E3 /* Models */,
 				A5E3EFFF250814A500C792E3 /* Services */,
 				A525D3AB25096C470008A24D /* Presentation */,
+				A525D3CB250A34B80008A24D /* Extensions */,
+				A525D3DE250A36130008A24D /* Resources */,
 				A5E3EFE82508145D00C792E3 /* AppDelegate.swift */,
 				A5E3EFF42508146300C792E3 /* Assets.xcassets */,
-				A5E3EFF62508146300C792E3 /* LaunchScreen.storyboard */,
 				A5E3EFF92508146300C792E3 /* Info.plist */,
-				A5E3EFF12508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld */,
 			);
 			path = HotWaterShutdownScheduler;
 			sourceTree = "<group>";
@@ -179,6 +231,7 @@
 			children = (
 				A5E3F0072508199600C792E3 /* CoreDataStack.swift */,
 				A56B89852508B9AF0018DD34 /* DBAddress.swift */,
+				A5E3EFF12508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -235,6 +288,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"ru-RU",
 			);
 			mainGroup = A5E3EFDC2508145D00C792E3;
 			productRefGroup = A5E3EFE62508145D00C792E3 /* Products */;
@@ -251,10 +305,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5E3EFF82508146300C792E3 /* LaunchScreen.storyboard in Resources */,
+				A525D3D5250A35E50008A24D /* Localizable.strings in Resources */,
 				A5E3EFF52508146300C792E3 /* Assets.xcassets in Resources */,
+				A525D3DD250A35F10008A24D /* Localizable.strings in Resources */,
+				A525D3D6250A35E50008A24D /* LaunchScreen.storyboard in Resources */,
 				A525D3B225096E5E0008A24D /* AddressListTableViewCell.xib in Resources */,
 				A5E3EFF02508145D00C792E3 /* Main.storyboard in Resources */,
+				A525D3DC250A35F10008A24D /* LaunchScreen.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +375,7 @@
 				A56B89822508252D0018DD34 /* FileService.swift in Sources */,
 				A525D3B125096E5E0008A24D /* AddressListTableViewCell.swift in Sources */,
 				A5E3EFF32508145D00C792E3 /* HotWaterShutdownScheduler.xcdatamodeld in Sources */,
+				A525D3CE250A34D90008A24D /* String+Additions.swift in Sources */,
 				A56B8980250822DA0018DD34 /* Address.swift in Sources */,
 				A525D3AA250914FD0008A24D /* DatabaseService.swift in Sources */,
 				A525D3AD25096C7E0008A24D /* AddressListPresenter.swift in Sources */,
@@ -327,20 +385,45 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A525D3D0250A35E50008A24D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A525D3D1250A35E50008A24D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A525D3D3250A35E50008A24D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A525D3D4250A35E50008A24D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A525D3D8250A35F10008A24D /* LaunchScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A525D3D9250A35F10008A24D /* ru-RU */,
+			);
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		A525D3DA250A35F10008A24D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A525D3DB250A35F10008A24D /* ru-RU */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		A5E3EFEE2508145D00C792E3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A5E3EFEF2508145D00C792E3 /* Base */,
+				A525D3C0250A2DDD0008A24D /* ru-RU */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A5E3EFF62508146300C792E3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A5E3EFF72508146300C792E3 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -350,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -396,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -410,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -450,7 +535,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

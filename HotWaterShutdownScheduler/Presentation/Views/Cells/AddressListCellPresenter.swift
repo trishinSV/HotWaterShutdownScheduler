@@ -10,6 +10,8 @@ import UIKit
 
 protocol AddressListCellPresenterProtocol: AnyObject {
 
+    // MARK: - Properties
+
     var view: AddressListCellViewProtocol! { get set }
 
     var cityTitle: String { get }
@@ -19,6 +21,8 @@ protocol AddressListCellPresenterProtocol: AnyObject {
 }
 
 class AddressListCellPresenter: AddressListCellPresenterProtocol {
+
+    // MARK: - Public
 
     var view: AddressListCellViewProtocol!
 

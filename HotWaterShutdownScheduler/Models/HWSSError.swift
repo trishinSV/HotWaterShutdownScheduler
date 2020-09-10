@@ -19,13 +19,13 @@ extension HWSSError: LocalizedError {
     public var errorDescription: String? {
         switch self {
             case .badURL:
-                return "Bad URL"
+                return "Bad URL".localized
             case .networkError:
-                return "Network error"
+                return "Network error".localized
             case .decodingError:
-                return "Decoding error"
+                return "Decoding error".localized
             case .diskError:
-                return "File writing error"
+                return "File writing error".localized
         }
     }
 }
